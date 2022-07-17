@@ -17,7 +17,10 @@ zip:  00001
 To install :
 
 `composer require drongotech/iplocationmanager`
+
 `php artisan vendor:publish --tag=dt-config`
+
 `php artisan vendor:publish --tag=dt-migrations`
+
 `php artisan migrate`
 
