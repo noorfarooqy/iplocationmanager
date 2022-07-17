@@ -22,7 +22,7 @@ class IplocationServiceProvider extends ServiceProvider
     protected function publishConfig()
     {
         $this->publishes([
-            __DIR__ . '/../config/departments.php' => config_path('departments.php'),
+            __DIR__ . '/../config/iplocationmanager.php' => config_path('iplocationmanager.php'),
         ], 'dt-config');
     }
 
