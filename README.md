@@ -26,3 +26,9 @@ To install :
 
 `php artisan migrate`
 
+
+Add anywhere on your project to log the ip data using:-
+
+`use Drongotech\Events\Iplocationmanager\LogIpEvent;`
+
+`LogIpEvent::dispatch([]);`
