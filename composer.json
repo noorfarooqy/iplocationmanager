@@ -5,13 +5,26 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Drongotech\\Iplocationmanager\\": "src/"
+            "Drongotech\\Iplocationmanager\\": "src/",
+            "Drongotech\\Iplocationmanager\\IpInterfaces\\": "services/",
+            "Drongotech\\Iplocationmanager\\IpStack\\": "ipstack/",
+            "Drongotech\\Iplocationmanager\\Models\\": "app/Models/",
+            "Drongotech\\Listeners\\Iplocationmanager\\": "app/Listeners/",
+            "Drongotech\\Events\\Iplocationmanager\\": "app/Events/",
+            "Drongotech\\Controllers\\Iplocationmanager\\": "app/Controllers/"
         }
     },
     "authors": [{
         "name": "Noor Abdi",
         "email": "noor@drongo.vip"
     }],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Drongotech\\Iplocationmanager\\IplocationServiceProvider"
+            ]
+        }
+    },
     "minimum-stability": "beta",
     "require": {},
     "require-dev": {

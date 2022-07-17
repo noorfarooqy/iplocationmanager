@@ -1,5 +1,11 @@
 <?php
-namespace App\IplocationManager\IpInterfaces;
+/*
+Author: Noor Abdi
+Company: Drongo Technology
+ */
+
+namespace Drongotech\Iplocationmanager\IpInterfaces;
+
 interface IpInterface
 {
 

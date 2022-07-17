@@ -1,7 +1,12 @@
 <?php
-namespace App\IplocationManager\IpStack;
+/*
+Author: Noor Abdi
+Company: Drongo Technology
+ */
 
-use App\IplocationManager\IpInterfaces\IpInterface;
+namespace Drongotech\Iplocationmanager\IpStack;
+
+use Drongotech\Iplocationmanager\IpInterfaces\IpInterface;
 
 class IpStack implements IpInterface
 {

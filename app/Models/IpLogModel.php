@@ -1,11 +1,12 @@
 <?php
-namespace App\IplocationManager\Models;
+namespace Drongotech\Iplocationmanager\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 class IpLogModel extends Model
 {
     protected $table = "ip_log";
+    public $guarded = [];
 
     private $error = null;
     public function createRecord($data)
@@ -13,7 +14,7 @@ class IpLogModel extends Model
         try {
             $record = $this->create($data);
             return $record;
-        } catch (\Throwable $th) {
+        } catch (\Throwable$th) {
             $this->error = $th->getMessage();
             return false;
         }
