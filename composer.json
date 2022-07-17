@@ -1,0 +1,21 @@
+{
+    "name": "drongotech/iplocationmanager",
+    "description": "Using IP Stack to get request ip and save the ip meta data",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Drongotech\\Iplocationmanager\\": "src/"
+        }
+    },
+    "authors": [{
+        "name": "Noor Abdi",
+        "email": "noor@drongo.vip"
+    }],
+    "minimum-stability": "beta",
+    "require": {},
+    "require-dev": {
+        "laravel/tinker": "^2.7",
+        "laravel/framework": "^9.0"
+    }
+}
