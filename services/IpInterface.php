@@ -9,9 +9,9 @@ namespace Drongotech\Iplocationmanager\IpInterfaces;
 interface IpInterface
 {
 
-    public function setIpAddress($ipAddress);
+    public function setIpAddress();
     public function setAccessKey($key);
     public function requestStandardIpLookup();
     public function requestBulkIpLookup();
-    public function setApiEndpoint();
+    public function setBaseUrl($url);
 }

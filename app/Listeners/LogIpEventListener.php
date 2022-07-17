@@ -3,6 +3,7 @@
 namespace Drongotech\Listeners\Iplocationmanager;
 
 use Drongotech\Events\Iplocationmanager\LogIpEvent;
+use Drongotech\Iplocationmanager\IpStack\IpStack;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Facades\Log;
 
@@ -27,6 +28,12 @@ class LogIpEventListener implements ShouldQueue
     public function handle(LogIpEvent $event)
     {
         Log::info('ready for listeners');
+        $ipStack = new IpStack();
+        $ipStack->setIpAddress();
+        $ipStack->setAccessKey(config('iplocationmanager.ipstack_access_key'));
+        $ipStack->setBaseUrl(config('iplocationmanager.ipstack_base_url'));
+        $ip_data = $ipStack->requestStandardIpLookup();
+        Log::info($ip_data);
     }
 
     public function failed(LogIpEvent $event, $exception)

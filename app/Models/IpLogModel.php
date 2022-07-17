@@ -2,6 +2,7 @@
 namespace Drongotech\Iplocationmanager\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Log;
 
 class IpLogModel extends Model
 {
@@ -16,6 +17,7 @@ class IpLogModel extends Model
             return $record;
         } catch (\Throwable$th) {
             $this->error = $th->getMessage();
+            Log::error($th->getMessage());
             return false;
         }
     }
