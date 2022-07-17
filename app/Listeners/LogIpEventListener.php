@@ -33,7 +33,13 @@ class LogIpEventListener implements ShouldQueue
         $ipStack->setAccessKey(config('iplocationmanager.ipstack_access_key'));
         $ipStack->setBaseUrl(config('iplocationmanager.ipstack_base_url'));
         $ip_data = $ipStack->requestStandardIpLookup();
-        Log::info($ip_data);
+        if ($ip_data) {
+
+            Log::info($ip_data);
+
+        } else {
+            Log::error($ipStack->getMessage());
+        }
     }
 
     public function failed(LogIpEvent $event, $exception)
