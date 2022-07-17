@@ -34,7 +34,7 @@ class IpStack implements IpInterface
     public function requestStandardIpLookup()
     {
         try {
-            $url = $this->api_endpoint + $this->ip_address+"?access_key=" . $this->access_key;
+            $url = $this->api_endpoint . $this->ip_address . "?access_key=" . $this->access_key;
             $response = Http::get($url);
             Log::info($url);
             if ($response->ok()) {
