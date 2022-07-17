@@ -1,5 +1,7 @@
 ## Drongotech/iplocationmanager ![enter image description here](https://img.shields.io/badge/Version-1.0.7-brightgreen)
 
+![Laravel logo](https://laravel.com/img/logomark.min.svg)
+
 IP location manager uses [Ipstack](https://ipstack.com/)  to do a look up of the client ip address. The data include :-
 
 ip:  "xxx.xxx.xxx.xxx"
