@@ -35,7 +35,12 @@ class LogIpEventListener implements ShouldQueue
         $ip_data = $ipStack->requestStandardIpLookup();
         if ($ip_data) {
 
-            Log::info($ip_data);
+            $record = $ipStack->saveToDatabase($ip_data);
+            if (!$record) {
+                Log::error($ipStack->getMessage());
+            } else {
+                Log::info('success log for ip stack');
+            }
 
         } else {
             Log::error($ipStack->getMessage());

@@ -7,6 +7,7 @@ Company: Drongo Technology
 namespace Drongotech\Iplocationmanager\IpStack;
 
 use Drongotech\Iplocationmanager\IpInterfaces\IpInterface;
+use Drongotech\Iplocationmanager\Models\IpLogModel;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Request;
@@ -50,8 +51,16 @@ class IpStack implements IpInterface
             return false;
         }
     }
+    public function saveToDatabase($data)
+    {
+        $logModel = new IpLogModel();
+        $saved = $logModel->createRecord($data);
+        $this->error_message = $logModel->getMessage();
+        return $saved;
+    }
     public function requestBulkIpLookup()
     {}
+
     public function getMessage()
     {
         return $this->error_message;
