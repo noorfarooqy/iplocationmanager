@@ -16,7 +16,7 @@ class IpStack implements IpInterface
     private $ip_address;
     private $access_key;
     private $api_endpoint;
-    private $error_message ;
+    private $error_message;
     public function setIpAddress()
     {
         $this->ip_address = env('APP_REMOTE_IP', true) ? Request::ip() : trim(shell_exec("dig +short myip.opendns.com @resolver1.opendns.com"));
@@ -34,7 +34,7 @@ class IpStack implements IpInterface
     public function requestStandardIpLookup()
     {
         try {
-            $url = $this->api_endpoint+$this->ip_address+"?access_key=".$this->access_key;
+            $url = $this->api_endpoint + $this->ip_address+"?access_key=" . $this->access_key;
             $response = Http::get($url);
             Log::info($url);
             if ($response->ok()) {
