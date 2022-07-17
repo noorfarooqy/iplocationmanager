@@ -54,6 +54,10 @@ class IpStack implements IpInterface
     public function saveToDatabase($data)
     {
         $logModel = new IpLogModel();
+        $data['location'] = json_encode($data['location'] ?? []);
+        $data['time_zone'] = json_encode($data['time_zone'] ?? []);
+        $data['currency'] = json_encode($data['currency'] ?? []);
+        $data['connection'] = json_encode($data['connection'] ?? []);
         $saved = $logModel->createRecord($data);
         $this->error_message = $logModel->getMessage();
         return $saved;
