@@ -7,6 +7,7 @@ use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\Log;
 
 class LogIpEvent
 {
@@ -20,6 +21,7 @@ class LogIpEvent
     public $ipData;
     public function __construct($ipData)
     {
+        Log::debug('ready for event');
         $this->ipData = $ipData;
     }
 
